@@ -16,19 +16,3 @@ public function get_id()
 {
     return $this -> _id;
 }
-
-/*
-https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_animation2
-
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-print
-  https://www.w3schools.com/js/tryit.asp?filename=tryjs_output_print
-
-
- extension français
-$heure = readline('coucou');
-
-
