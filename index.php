@@ -5,41 +5,35 @@ require_once('customer.php');
 require_once('order.php');
 require_once('orderitem.php');
 
+// CREATE PRODUCTS
+$products = [];
+
+$lasagne = new Product('lasagne', 9.99);
+$pizza = new Product('pizza', 12.50);
+$platEnfant = new Product('plat Enfant', 12.50);
 
 
-//Create products
-$product1 = new Product('pizza', 8.10);
-$product2 = new Product('lasagne', 7.80);
-$product3 = new Product('menu enfant', 5.20);
-//add products to array
-$product = [];
-$product[] = $product1;
-$product[] = $product2;
-$product[] = $product3;
+// CREATE CUSTOMER
+
+$customer1 = new Customer('Maurice', 'Roger');
+echo "<pre>";
+print_r($customer1);
+exit;
 
 
 
-//Create new customer
-$customer1 = new Customer('Maurice','Robert');
-
-
-//create order
-$customer_id1 = $customer1->get_id();
-$order1 = new Order($customer_id1);
-    //customer order food, we create orderitems
-    $order_id1= $order1->get_id();
-    $order_item1= new OrderItem($order_id1, $product1, 2);
-    $order_item2= new OrderItem($order_id1, $product2, 3);
-//add OrderItem in Order.
-$order1->addOrderItem($order_item1)
-        ->addOrderItem($order_item2);
-
-echo '<pre>';
-
-print_r($order_item2->getTotal());
-
-print_r($order1->getTotalOrder());
+// CREATE ORDER FOR FIRST CLIENT
+$customerId = $customer1->get_id();
+$order1 = new Order($customerId);
+$orderId = $order1->get_id();
+    // CUSTOMER ORDER FOOD, We create orderItem
+    $orderItem1 = new OrderItem($orderId, $lasagne, 12);
+    $orderItem2 = new OrderItem($orderId, $platEnfant, 1);
+$order1->addOrderItem($orderItem1);
+$order1->addOrderItem($orderItem2);
 
 
 
 
+echo "<pre>";
+print_r($order1);

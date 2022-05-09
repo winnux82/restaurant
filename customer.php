@@ -2,21 +2,19 @@
 
 class Customer
 {
-
     private string $_id;
-    private string $_firstname;
-    private string $_lastname;
+    private string $_firstName;
+    private string $_lastName;
     private ?string $_email;
 
-    public function __construct(string $firstname, string $lastname, string $email =null )
+
+    public function __construct(string $firstName, string $lastName, string $email = null)
     {
         $this->_id = uniqid('customer_');
-        $this->_firstname = $firstname;
-        $this->_lastname = $lastname;
+        $this->_firstName = $firstName;
+        $this->_lastName = $lastName;
         $this->_email = $email;
     }
-
-
 
     /**
      * Get the value of _id
@@ -27,41 +25,41 @@ class Customer
     }
 
     /**
-     * Get the value of _firstname
+     * Get the value of _firstName
      */
-    public function get_firstname()
+    public function get_firstName()
     {
-        return $this->_firstname;
+        return $this->_firstName;
     }
 
     /**
-     * Set the value of _firstname
+     * Set the value of _firstName
      *
      * @return  self
      */
-    public function set_firstname($_firstname)
+    public function set_firstName($_firstName)
     {
-        $this->_firstname = $_firstname;
+        $this->_firstName = $_firstName;
 
         return $this;
     }
 
     /**
-     * Get the value of _lastname
+     * Get the value of _lastName
      */
-    public function get_lastname()
+    public function get_lastName()
     {
-        return $this->_lastname;
+        return $this->_lastName;
     }
 
     /**
-     * Set the value of _lastname
+     * Set the value of _lastName
      *
      * @return  self
      */
-    public function set_lastname($_lastname)
+    public function set_lastName($_lastName)
     {
-        $this->_lastname = $_lastname;
+        $this->_lastName = $_lastName;
 
         return $this;
     }
